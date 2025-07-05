@@ -37,8 +37,6 @@ adminpage/
 ├── adminAddBtn.js            # 추가 버튼 
 ├── js/
 │   └── adminPageLogic.js     # 필터/정렬 API 호출 로직
-├── css/
-│   └── adminPage.css         # 스타일시트
 └── ...
 ```
 
@@ -155,18 +153,59 @@ fetchFilteredPeople({
 ## 디렉토리 구조
 
 ```
-src/
-├── components/
-│ └── Option.js # 작업 입력 컴포넌트
+TRAMPROJECT_
 │
-├── js/
-│ ├── submitWorkInfo.js # 서버 전송 함수
-│ ├── timeUtils.js # 시간 계산 함수 (HH:mm)
-│ ├── locationsList.js # 장소 리스트
-│ └── workTimeList.js # 시간 리스트
+├── Back/
+│     ├── myproject/
+│          ├── myapp/
+│                └── apps.py                     # Django 앱 설정 등록 
+│                └── auth_utils.py               # 용자 및 관리자 로그인 인증 함수 구현
+│                └── models.py                   # user(사용자), admin(관리자), 근무정보, 급여 데이터 모델 정의
+│                └── serializers.py              # 모델 데이터를 JSON으로 직렬화/역직렬화 처리
+│                └── urls.py                     # API 엔드포인트 라우팅 (현재 `/items/` 단일 경로)
+│                └── views.py                    # API 요청 분기 처리, `data_type`에 따라 기능 실행
+│     ├── dbsqlite3                              # Django 내장 데이터베이스, 데이터베이스 스키마와 데이터를 파일 기반 저장
+│     ├── manage.py                              # Django 프로젝트 관리 커맨드 실행
 │
-├── css/
-│ └── activity.css # 스타일 시트
+├── Front/
+│     ├── src/
+│          ├── calenderTest/
+│              ├── calenderFront/
+│                └── calender.js                 # 달력 및 날짜선택
+│                └── calenderinfo.js             # 작업 입력 컴포넌트
+│
+│          ├── js/
+│                └── submitWorkInfo.js           # 서버 전송 함수
+│                └── timeUtils.js                # 시간 계산 함수
+│                └── locationsList.js            # 장소 리스트
+│                └── workTimeList.js             # 시간 리스트
+│ 
+│     ├── adminpage/
+│          ├── adminpag-Font/
+│                └── adminPage.js                # 메인 관리자 페이지
+│                └── adminInformation.js         # 정보 수정 
+│                └── addPersonModal.js           # 직원 추가 
+│                └── adminAddBtn.js              # 추가 버튼
+│                └── addPanel.js                 # 회사·일급 입력
+│                └── adminResizableTable.js      # 너비·높이 조절
+│
+│          ├── js/
+│                └── adminPageLogic.js           # 필터/정렬 API 호출 로직
+│                └── admnsdbPost.js              # POST 요청
+│                └── adminPageUpdate.js          # 직원 정보 업데이트
+│                └── adminPageDelete.js          # 직원 삭제 요청
+│                └── useAdminpanelLogic.js       # 일급 관리
+│                └── useAdminInformationLogic.js # 직원 정보 수정
+│                └── useAddPersonLogic.js        # 신규 직원 등록
+│
+│     ├──  login/
+│          ├── login-Font/
+│                └── login.js                    # 로그인 컴포넌트
+│
+│          ├── js/
+│                └── logindata.js                # 로그인 API 호출
+│                └── userContext.js              # 로그인 사용자 정보 관리
+│                └── validation.js               # 로그인 유효성 검사
 ```
 ---
 ## 서버 전송 예시
