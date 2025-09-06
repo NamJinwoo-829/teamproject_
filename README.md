@@ -171,14 +171,14 @@ TRAMPROJECT_
 │     ├── src/
 │          ├── calenderTest/
 │              ├── calenderFront/
-│                └── calender.js                 # 
-│                └── calenderinfo.js             #
+│                └── calender.js                 # 캘린더 날짜 강조 및 옵션 표시
+│                └── calenderinfo.js             # 작업 기록 입력
 │
 │          ├── js/
-│                └── submitWorkInfo.js           # 
-│                └── timeUtils.js                # 
-│                └── locationsList.js            # 
-│                └── workTimeList.js             # 
+│                └── submitWorkInfo.js           # 근정 정보 전송
+│                └── timeUtils.js                # 작업 시간 계산
+│                └── locationsList.js            # 근무지 
+│                └── workTimeList.js             # 작업 시간
 │ 
 │     ├── adminpage/
 │          ├── adminpag-Font/
@@ -202,7 +202,7 @@ TRAMPROJECT_
 │                └── utils.js                    # 사원 주민등록번호·전화번호 포맷
 │
 │     ├── dashboard/
-│                └── dashboard.js                # 
+│                └── dashboard.js                # Dashboard 레이아웃
 │          ├── components/
 │                └── FinalCahart.js              # 월별 수입·지출 차트 표시
 │                └── Header.js                   # 관리자 문구와 로그아웃 버튼 표시
