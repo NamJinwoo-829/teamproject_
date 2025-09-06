@@ -224,8 +224,8 @@ TRAMPROJECT_
 │          ├── js/
 │                └── validation.js               # 로그인 API 호출
 │                └── userContext.js              # 로그인 사용자 정보 관리
-│                └── user_login_info.js          # 로그인 유효성 검사
-│                └── admin_login_info.js         # 로그인 유효성 검사
+│                └── user_login_info.js          # 사원 로그인 시도 후 성공 시 사원 정보, 실패 시 오류 반환
+│                └── admin_login_info.js         # 로그인 시도 후 결과와 사용자 데이터 반환
 ```
 ---
 ## 서버 전송 예시
