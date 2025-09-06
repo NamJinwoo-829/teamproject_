@@ -171,41 +171,61 @@ TRAMPROJECT_
 │     ├── src/
 │          ├── calenderTest/
 │              ├── calenderFront/
-│                └── calender.js                 # 달력 및 날짜선택
-│                └── calenderinfo.js             # 작업 입력 컴포넌트
+│                └── calender.js                 # 
+│                └── calenderinfo.js             #
 │
 │          ├── js/
-│                └── submitWorkInfo.js           # 서버 전송 함수
-│                └── timeUtils.js                # 시간 계산 함수
-│                └── locationsList.js            # 장소 리스트
-│                └── workTimeList.js             # 시간 리스트
+│                └── submitWorkInfo.js           # 
+│                └── timeUtils.js                # 
+│                └── locationsList.js            # 
+│                └── workTimeList.js             # 
 │ 
 │     ├── adminpage/
 │          ├── adminpag-Font/
-│                └── adminPage.js                # 메인 관리자 페이지
-│                └── adminInformation.js         # 정보 수정 
-│                └── addPersonModal.js           # 직원 추가 
-│                └── adminAddBtn.js              # 추가 버튼
-│                └── addPanel.js                 # 회사·일급 입력
-│                └── adminResizableTable.js      # 너비·높이 조절
+│                └── adminPage.js                # 사원 관리 페이지 (추가·수정·삭제·검색/정렬)
+│                └── adminInformation.js         # 사원 정보 수정 
+│                └── addPersonModal.js           # 사원 정보 입력 
+│                └── adminAddBtn.js              # 직원 추가·삭제·검색 버튼
+│                └── addPanel.js                 # 회사명·일급 입력 
+│                └── adminResizableTable.js      # 테이블 행·열 크기 조절(Dashborad 사용으로 삭제 예정)
+│                └── admnsButon.js               # 회사별 일급 수정
 │
 │          ├── js/
-│                └── adminPageLogic.js           # 필터/정렬 API 호출 로직
-│                └── admnsdbPost.js              # POST 요청
-│                └── adminPageUpdate.js          # 직원 정보 업데이트
-│                └── adminPageDelete.js          # 직원 삭제 요청
-│                └── useAdminpanelLogic.js       # 일급 관리
-│                └── useAdminInformationLogic.js # 직원 정보 수정
-│                └── useAddPersonLogic.js        # 신규 직원 등록
+│                └── adminPageAddPerson.js       # 신규 사용자 서버 전송 
+│                └── adminPageDelete.js          # 선택 사원 삭제 서버 함수
+│                └── adminPageLogic.js           # 사원 필터링/정렬 서버 조회 함수
+│                └── adminPageUpdate.js          # 사원 정보 업데이트 서버 함수
+│                └── admnsdbPost.js              # 사원 목록 조회 서버 함수
+│                └── useAddPersonLogic.js        # 사원 추가
+│                └── useAdminInformationLogic.js # 사원 정보 모달 로직
+│                └── useAdminpanelLogic.js       # 일급 관리 패널 로직
+│                └── utils.js                    # 사원 주민등록번호·전화번호 포맷
+│
+│     ├── dashboard/
+│                └── dashboard.js                # 
+│          ├── components/
+│                └── FinalCahart.js              # 월별 수입·지출 차트 표시
+│                └── Header.js                   # 관리자 문구와 로그아웃 버튼 표시
+│                └── sideBar.js                  # 사이드바 메뉴와 Total Sales 하위 메뉴 표시 및 활성 상태 강조
+│          ├── adminpag-Font/
+│                └── employeeData.js             # 직원 근무·상태·시간·위치 등 데이터 배열
+│                └── googleAuth.js               # 구글 OAuth 토큰 연동
+│          ├── adminpag-Font/
+│                └── ApprovalPage.js             # 사원 목록과 승인/거절 관리
+│                └── DailyPayPage.js             # 일급 관리 페이지 표시
+│                └── EmployeeList.js             # AdminPage 렌더링
+│                └── overview.js                 # Google Calendar 연동과 총 지출/승인 대기 사원 표시 컴포넌트
+│                └── TotalSalesPage.js           # 업체별 매출, 지출 및 순이익 그래프
 │
 │     ├──  login/
 │          ├── login-Font/
 │                └── login.js                    # 로그인 컴포넌트
 │
 │          ├── js/
-│                └── logindata.js                # 로그인 API 호출
+│                └── validation.js               # 로그인 API 호출
 │                └── userContext.js              # 로그인 사용자 정보 관리
-│                └── validation.js               # 로그인 유효성 검사
+│                └── user_login_info.js          # 로그인 유효성 검사
+│                └── admin_login_info.js         # 로그인 유효성 검사
 ```
 ---
 ## 서버 전송 예시
@@ -246,4 +266,25 @@ submitWorkInfo({
 * Context API
 * HTML Canvas API
 
+---
+
+```
+Library
+
+* "@chakra-ui/react": "^2.10.9"    ( 명령어 : npm install @chakra-ui/react@2  )
+* "@emotion/react": "^11.14.0"     ( 명령어 : npm install @emotion/react  )
+* "@emotion/styled": "^11.14.1"    ( 명령어 : npm install @emotion/styled )
+* "recharts": "^3.1.2"             ( 명령어 : npm install recharts )
+* "date-fns": "^4.1.0"             ( 명령어 : npm install date-fns  )
+* "framer-motion": "^12.23.12"     ( 명령어 : npm install framer-motion )
+* "moment": "^2.30.1"              ( 명령어 : npm install moment  )
+* "react": "^19.0.0"               ( 명령어 : npm install react )
+* "react-big-calendar": "^1.19.4"  ( 명령어 : npm install react-big-calendar )
+* "react-dom": "^19.0.0"           ( 명령어 : npm install react-dom )
+* "react-icons": "^5.5.0"          ( 명령어 : npm install react-icons )
+* "react-router-dom": "^7.3.0"     ( 명령어 : npm install react-router-dom )
+* "concurrently": "^9.1.2"         ( 명령어 : npm install -D concurrently )
+* "nodemon": "^3.1.9"              ( 명령어 : npm install -D nodemon ) 
+* "eslint": "^8.56.0"              ( 명령어 : npm install -D eslint )
+```
 ---
