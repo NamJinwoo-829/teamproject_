@@ -286,5 +286,6 @@ Library
 * "concurrently": "^9.1.2"         ( 명령어 : npm install -D concurrently )
 * "nodemon": "^3.1.9"              ( 명령어 : npm install -D nodemon ) 
 * "eslint": "^8.56.0"              ( 명령어 : npm install -D eslint )
+* "react-day-picker": "^9.9.0"     ( 명령어 : npm install react-day-picker )
 ```
 ---
